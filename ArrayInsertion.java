@@ -27,4 +27,58 @@ public class ArrayInsertion {
         System.out.println("Selected number at index " + indexToSelect + ": " + selectedNumber);
     }
 
+
+    public static void selectionSort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            // Find the minimum element in the unsorted part
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            // Swap the found minimum element with the first element
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
+        }
+    }
+
+    public static int[] insertIntoArray(int[] array, int size, int number, int position) {
+        // Validate position
+        if (position < 0 || position > size) {
+            throw new IllegalArgumentException("Invalid position: " + position);
+        }
+
+        // Create a new array with extra space for the new element
+        int[] newArray = new int[size + 1];
+
+        // Copy elements before the position
+        for (int i = 0; i < position; i++) {
+            newArray[i] = array[i];
+        }
+
+        // Insert the new number at the specified position
+        newArray[position] = number;
+
+        // Copy the remaining elements after the position
+        for (int i = position; i < size; i++) {
+            newArray[i + 1] = array[i];
+        }
+
+        return newArray;
+    }
+
+    public static int selectFromArray(int[] array, int index) {
+        // Validate index
+        if (index < 0 || index >= array.length) {
+            throw new IllegalArgumentException("Invalid index: " + index);
+        }
+
+        return array[index];
+    }
+}
+
     
