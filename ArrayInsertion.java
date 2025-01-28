@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class ArrayInsertion {
     public static void main(String[] args) {
         // Initial array and its size
-        int[] array = {4, 2, 5, 1};
+        int[] array = {31, 60, 5, 33, 200, 88, 73, 51};
         int size = array.length;
 
         System.out.println("Original array: " + Arrays.toString(array));
