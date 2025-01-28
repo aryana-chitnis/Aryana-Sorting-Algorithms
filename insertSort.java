@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ArrayInsertion {
+public class insertSort {
     public static void main(String[] args) {
         // Initial array and its size
         int[] array = {31, 60, 5, 33, 200, 88, 73, 51};
